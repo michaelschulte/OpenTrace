@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OpenTrace — An open data standard for process-tracing research</title>
+  <meta name="description" content="OpenTrace is an open data standard and curated corpus for process-tracing data in decision research: eye-tracking, mouse- and cursor-tracing, Mouselab, think-aloud protocols, and response dynamics.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='8' cy='22' r='4' fill='%231D3FE3'/%3E%3Ccircle cx='17' cy='10' r='5' fill='%231D3FE3'/%3E%3Ccircle cx='26' cy='18' r='3' fill='%231D3FE3'/%3E%3Cpath d='M8 22 L17 10 L26 18' stroke='%231D3FE3' stroke-width='1.5' fill='none'/%3E%3C/svg%3E">
+</head>
+<body>
+
+  <a class="skip-link" href="#why">Skip to content</a>
+
+  <header class="topbar">
+    <a class="wordmark" href="#top">open<span>trace</span><span class="cursor">_</span></a>
+    <nav aria-label="Page sections">
+      <a href="#why">Why</a>
+      <a href="#standard">Standard</a>
+      <a href="#corpus">Corpus</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#contribute">Contribute</a>
+    </nav>
+    <a class="repo-link" href="https://github.com/michaelschulte/OpenTrace">
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub
+    </a>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero-text">
+        <p class="kicker">An open research infrastructure project</p>
+        <h1>One format for every trace of a&nbsp;decision.</h1>
+        <p class="lede">
+          OpenTrace is an open data standard and curated corpus for
+          <strong>process-tracing data</strong> in decision research —
+          so that eye movements, cursor paths, information acquisitions,
+          and verbal protocols recorded in one lab can be read, reused,
+          and re-analysed in any other.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://github.com/michaelschulte/OpenTrace">View the repository</a>
+          <a class="btn btn-ghost" href="#standard">Read about the standard</a>
+        </div>
+        <ul class="hero-meta" aria-label="Project facts">
+          <li><span class="meta-key">status</span> draft&nbsp;v0.1</li>
+          <li><span class="meta-key">license</span> MIT</li>
+          <li><span class="meta-key">access</span> open</li>
+        </ul>
+      </div>
+
+      <figure class="hero-figure" aria-hidden="true">
+        <svg viewBox="0 0 420 360" class="trace-svg" role="img">
+          <!-- AOI grid -->
+          <g class="aoi-grid">
+            <rect x="20"  y="30"  width="170" height="90" rx="6"/>
+            <rect x="230" y="30"  width="170" height="90" rx="6"/>
+            <rect x="20"  y="150" width="170" height="90" rx="6"/>
+            <rect x="230" y="150" width="170" height="90" rx="6"/>
+            <rect x="20"  y="270" width="170" height="60" rx="6"/>
+            <rect x="230" y="270" width="170" height="60" rx="6"/>
+          </g>
+          <!-- scanpath -->
+          <path class="scanpath" d="M 105 75 L 315 75 L 315 195 L 105 195 L 105 300 L 315 300"/>
+          <!-- fixations, sized by duration -->
+          <g class="fixations">
+            <circle cx="105" cy="75"  r="16"/>
+            <circle cx="315" cy="75"  r="11"/>
+            <circle cx="315" cy="195" r="20"/>
+            <circle cx="105" cy="195" r="9"/>
+            <circle cx="105" cy="300" r="7"/>
+            <circle cx="315" cy="300" r="13"/>
+          </g>
+        </svg>
+        <figcaption class="figure-label">fig. 1 — a scanpath over a two-option choice task</figcaption>
+      </figure>
+    </section>
+
+    <!-- ============ WHY ============ -->
+    <section class="section" id="why">
+      <div class="section-label"><span>01</span> Why</div>
+      <div class="section-body">
+        <h2>Rich data, locked in a thousand formats.</h2>
+        <p>
+          Process-tracing methods open a window onto <em>how</em> decisions are made,
+          not just their outcomes. Decades of studies have recorded fixations,
+          acquisitions, cursor trajectories, and verbal reports — yet almost every
+          dataset lives in a lab-specific format shaped by one vendor's hardware,
+          one experiment builder, and one analysis script.
+        </p>
+        <p>
+          The result: data that cannot move. Reuse, replication, cross-paradigm
+          comparison, and cumulative meta-analysis all stall at the file format.
+          OpenTrace exists to remove that barrier.
+        </p>
+        <ul class="paradigm-list" aria-label="Process-tracing paradigms covered">
+          <li>eye-tracking</li>
+          <li>mouse- &amp; cursor-tracing</li>
+          <li>Mouselab &amp; information boards</li>
+          <li>think-aloud protocols</li>
+          <li>response dynamics</li>
+          <li>skin conductance &amp; pupillometry</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ STANDARD ============ -->
+    <section class="section" id="standard">
+      <div class="section-label"><span>02</span> The standard</div>
+      <div class="section-body">
+        <h2>A common language for traces.</h2>
+        <p>
+          At its core, OpenTrace describes every study as the same three things:
+          <strong>stimuli</strong> with defined areas of interest,
+          <strong>trials</strong> linking participants to stimuli, and a stream of
+          <strong>timestamped events</strong> — fixations, acquisitions, movements,
+          utterances, choices. One schema, regardless of how the trace was recorded.
+        </p>
+        <pre class="schema-example"><code><span class="c">// one trial, OpenTrace event stream</span>
+{
+  <span class="k">"trial_id"</span>:  <span class="s">"S07-T012"</span>,
+  <span class="k">"paradigm"</span>:  <span class="s">"eye_tracking"</span>,
+  <span class="k">"stimulus"</span>:  <span class="s">"gamble_pair_03"</span>,
+  <span class="k">"events"</span>: [
+    { <span class="k">"t"</span>: <span class="n">0.000</span>, <span class="k">"type"</span>: <span class="s">"trial_start"</span> },
+    { <span class="k">"t"</span>: <span class="n">0.184</span>, <span class="k">"type"</span>: <span class="s">"fixation"</span>, <span class="k">"aoi"</span>: <span class="s">"A.outcome_1"</span>, <span class="k">"dur"</span>: <span class="n">0.212</span> },
+    { <span class="k">"t"</span>: <span class="n">0.396</span>, <span class="k">"type"</span>: <span class="s">"saccade"</span>,  <span class="k">"from"</span>: <span class="s">"A.outcome_1"</span>, <span class="k">"to"</span>: <span class="s">"B.outcome_1"</span> },
+    { <span class="k">"t"</span>: <span class="n">2.741</span>, <span class="k">"type"</span>: <span class="s">"choice"</span>,   <span class="k">"value"</span>: <span class="s">"B"</span>, <span class="k">"rt"</span>: <span class="n">2.741</span> }
+  ]
+}</code></pre>
+        <div class="principles">
+          <div class="principle">
+            <h3>Format-agnostic</h3>
+            <p>The schema is defined independently of storage. Serialise to CSV, JSON, or Parquet — the structure is the same.</p>
+          </div>
+          <div class="principle">
+            <h3>Paradigm-general</h3>
+            <p>Fixations, cell openings, cursor samples, and coded utterances are all events on a shared timeline with shared AOI references.</p>
+          </div>
+          <div class="principle">
+            <h3>Validated</h3>
+            <p>A machine-readable specification with reference validators, so a dataset either conforms or tells you exactly why it doesn't.</p>
+          </div>
+          <div class="principle">
+            <h3>Documented by design</h3>
+            <p>Required metadata — apparatus, sampling rate, preprocessing, task structure — travels with the data, not in a drawer.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CORPUS ============ -->
+    <section class="section" id="corpus">
+      <div class="section-label"><span>03</span> The corpus</div>
+      <div class="section-body">
+        <h2>Not just a format — a library.</h2>
+        <p>
+          A standard is only useful if data actually exists in it. Alongside the
+          specification, OpenTrace curates a growing, openly licensed corpus of
+          process-tracing datasets converted to the common schema — spanning
+          paradigms, tasks, and labs.
+        </p>
+        <p>
+          Every corpus entry ships with complete task and apparatus metadata,
+          a provenance record pointing back to the original publication and raw
+          files, and a license that permits reuse. The goal is a body of data
+          large and consistent enough to support questions no single study can
+          answer: cross-task regularities in information search, robust
+          benchmarks for process models, and genuinely cumulative meta-analysis.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ ROADMAP ============ -->
+    <section class="section" id="roadmap">
+      <div class="section-label"><span>04</span> Roadmap</div>
+      <div class="section-body">
+        <h2>Where this is going.</h2>
+        <ol class="milestones">
+          <li>
+            <span class="milestone-tag">m1</span>
+            <div>
+              <h3>Schema draft</h3>
+              <p>A public v0.1 specification of the data model — entities, event taxonomy, metadata requirements — open for community comment.</p>
+            </div>
+          </li>
+          <li>
+            <span class="milestone-tag">m2</span>
+            <div>
+              <h3>Reference converters &amp; validators</h3>
+              <p>Open-source tooling that converts common vendor and experiment-builder outputs into OpenTrace, and validates conformance.</p>
+            </div>
+          </li>
+          <li>
+            <span class="milestone-tag">m3</span>
+            <div>
+              <h3>Seed corpus</h3>
+              <p>An initial set of published datasets across eye-tracking, Mouselab, and mouse-tracing paradigms, fully converted and documented.</p>
+            </div>
+          </li>
+          <li>
+            <span class="milestone-tag">m4</span>
+            <div>
+              <h3>Community governance</h3>
+              <p>A transparent process for evolving the specification and reviewing corpus submissions, owned by the research community.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ CONTRIBUTE ============ -->
+    <section class="section section-dark" id="contribute">
+      <div class="section-label"><span>05</span> Get involved</div>
+      <div class="section-body">
+        <h2>Built in the open, from day one.</h2>
+        <p>
+          OpenTrace will only work as a community standard. If you collect,
+          analyse, or archive process-tracing data, there is a way in:
+        </p>
+        <div class="contribute-grid">
+          <a class="contribute-card" href="https://github.com/michaelschulte/OpenTrace/issues">
+            <h3>Comment on the schema</h3>
+            <p>Tell us where the draft data model fits your paradigm — and where it breaks.</p>
+            <span class="card-cta">Open an issue&nbsp;→</span>
+          </a>
+          <a class="contribute-card" href="https://github.com/michaelschulte/OpenTrace/issues">
+            <h3>Contribute a dataset</h3>
+            <p>Have published process-tracing data you can share openly? Help us seed the corpus.</p>
+            <span class="card-cta">Get in touch&nbsp;→</span>
+          </a>
+          <a class="contribute-card" href="https://github.com/michaelschulte/OpenTrace">
+            <h3>Build the tooling</h3>
+            <p>Converters, validators, and analysis utilities are all open source and all welcome contributions.</p>
+            <span class="card-cta">See the repo&nbsp;→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PEOPLE ============ -->
+    <section class="section" id="people">
+      <div class="section-label"><span>06</span> People</div>
+      <div class="section-body">
+        <h2>Who is behind this.</h2>
+        <div class="person">
+          <p class="person-name">Michael Schulte-Mecklenbeck</p>
+          <p class="person-affil">University of Bern</p>
+          <p class="person-bio">
+            Decision researcher working on process-tracing methods — how people
+            search for, attend to, and integrate information before they choose.
+          </p>
+          <p class="person-links">
+            <a href="https://github.com/michaelschulte">github.com/michaelschulte</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>OpenTrace — an open data standard and corpus for process-tracing data in decision research.</p>
+    <p>
+      <a href="https://github.com/michaelschulte/OpenTrace">Source on GitHub</a>
+      · MIT License · © 2026 Michael Schulte-Mecklenbeck
+    </p>
+  </footer>
+
+</body>
+</html>
