@@ -35,12 +35,12 @@
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero-text">
-        <p class="kicker">An open research infrastructure project</p>
+        <p class="kicker">An open science project</p>
         <h1>One format for every trace of a&nbsp;decision.</h1>
         <p class="lede">
           OpenTrace is an open data standard and curated corpus for
           <strong>process-tracing data</strong> in decision research —
-          so that eye movements, cursor paths, information acquisitions,
+          so that eye movements, mouse cursor paths, information acquisitions,
           and verbal protocols recorded in one lab can be read, reused,
           and re-analysed in any other.
         </p>
@@ -72,13 +72,12 @@
           <g class="fixations">
             <circle cx="105" cy="75"  r="16"/>
             <circle cx="315" cy="75"  r="11"/>
-            <circle cx="315" cy="195" r="20"/>
-            <circle cx="105" cy="195" r="9"/>
+            <circle cx="315" cy="195" r="30"/>
+            <circle cx="105" cy="195" r="35"/>
             <circle cx="105" cy="300" r="7"/>
             <circle cx="315" cy="300" r="13"/>
           </g>
         </svg>
-        <figcaption class="figure-label">fig. 1 — a scanpath over a two-option choice task</figcaption>
       </figure>
     </section>
 
@@ -88,11 +87,8 @@
       <div class="section-body">
         <h2>Rich data, locked in a thousand formats.</h2>
         <p>
-          Process-tracing methods open a window onto <em>how</em> decisions are made,
-          not just their outcomes. Decades of studies have recorded fixations,
-          acquisitions, cursor trajectories, and verbal reports — yet almost every
-          dataset lives in a lab-specific format shaped by one vendor's hardware,
-          one experiment builder, and one analysis script.
+          Process-tracing methods open a window onto <em>how</em> decisions are made, not just their outcomes. Decades of studies have recorded eye tracking fixations, acquisitions, cursor trajectories, and verbal reports — yet almost every dataset lives in a lab- and technology specific format shaped by a vendor's hardware,
+          an experiment builder, or an analysis script.
         </p>
         <p>
           The result: data that cannot move. Reuse, replication, cross-paradigm
@@ -101,11 +97,10 @@
         </p>
         <ul class="paradigm-list" aria-label="Process-tracing paradigms covered">
           <li>eye-tracking</li>
-          <li>mouse- &amp; cursor-tracing</li>
+          <li>mouse-tracking</li>
           <li>Mouselab &amp; information boards</li>
           <li>think-aloud protocols</li>
           <li>response dynamics</li>
-          <li>skin conductance &amp; pupillometry</li>
         </ul>
       </div>
     </section>
@@ -130,14 +125,14 @@
   <span class="k">"events"</span>: [
     { <span class="k">"t"</span>: <span class="n">0.000</span>, <span class="k">"type"</span>: <span class="s">"trial_start"</span> },
     { <span class="k">"t"</span>: <span class="n">0.184</span>, <span class="k">"type"</span>: <span class="s">"fixation"</span>, <span class="k">"aoi"</span>: <span class="s">"A.outcome_1"</span>, <span class="k">"dur"</span>: <span class="n">0.212</span> },
-    { <span class="k">"t"</span>: <span class="n">0.396</span>, <span class="k">"type"</span>: <span class="s">"saccade"</span>,  <span class="k">"from"</span>: <span class="s">"A.outcome_1"</span>, <span class="k">"to"</span>: <span class="s">"B.outcome_1"</span> },
+    { <span class="k">"t"</span>: <span class="n">0.396</span>, <span class="k">"type"</span>: <span class="s">"transition"</span>,  <span class="k">"from"</span>: <span class="s">"A.outcome_1"</span>, <span class="k">"to"</span>: <span class="s">"B.outcome_1"</span> },
     { <span class="k">"t"</span>: <span class="n">2.741</span>, <span class="k">"type"</span>: <span class="s">"choice"</span>,   <span class="k">"value"</span>: <span class="s">"B"</span>, <span class="k">"rt"</span>: <span class="n">2.741</span> }
   ]
 }</code></pre>
         <div class="principles">
           <div class="principle">
             <h3>Format-agnostic</h3>
-            <p>The schema is defined independently of storage. Serialise to CSV, JSON, or Parquet — the structure is the same.</p>
+            <p>The schema is defined independently of storage. Serialise to CSV or JSON — the structure is the same.</p>
           </div>
           <div class="principle">
             <h3>Paradigm-general</h3>
@@ -167,12 +162,7 @@
           paradigms, tasks, and labs.
         </p>
         <p>
-          Every corpus entry ships with complete task and apparatus metadata,
-          a provenance record pointing back to the original publication and raw
-          files, and a license that permits reuse. The goal is a body of data
-          large and consistent enough to support questions no single study can
-          answer: cross-task regularities in information search, robust
-          benchmarks for process models, and genuinely cumulative meta-analysis.
+          Every corpus entry ships with complete task and apparatus metadata. A reference to the original publication, raw data files and a license that permits reuse. The goal is a body of data large and consistent enough to support questions no single study can answer: cross-task regularities in information search, robust benchmarks for process models, and genuinely cumulative meta-analysis.
         </p>
       </div>
     </section>
@@ -219,7 +209,7 @@
     <section class="section section-dark" id="contribute">
       <div class="section-label"><span>05</span> Get involved</div>
       <div class="section-body">
-        <h2>Built in the open, from day one.</h2>
+        <h2>Built in the open.</h2>
         <p>
           OpenTrace will only work as a community standard. If you collect,
           analyse, or archive process-tracing data, there is a way in:
@@ -257,6 +247,7 @@
             search for, attend to, and integrate information before they choose.
           </p>
           <p class="person-links">
+            <a href="https://schulte-mecklenbeck.com">schulte-mecklenbeck.com</a>
             <a href="https://github.com/michaelschulte">github.com/michaelschulte</a>
           </p>
         </div>
