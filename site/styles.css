@@ -388,6 +388,7 @@ a:hover { color: var(--accent); }
 /* ---------- people ---------- */
 
 .person { max-width: var(--measure); }
+.person + .person { margin-top: 2.5rem; }
 .person-name { font-size: 1.25rem; font-weight: 700; color: var(--ink); margin-bottom: .1rem; }
 .person-affil {
   font-family: var(--font-mono);
